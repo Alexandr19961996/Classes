@@ -1,6 +1,6 @@
 package TestNumber1;
 
-public class Main {
+public class Test {
     public static void main(String[] args) {
         Robot robot = new Robot(0, 0, Direction.UP);
         moveRobot(robot, 3, 0);

@@ -42,7 +42,7 @@ public class Robot {
     }
 
     public void stepForward() {
-        switch (direction){
+        switch (direction) {
             case UP -> y++;
             case RIGHT -> x++;
             case DOWN -> y--;
