@@ -7,7 +7,6 @@ import java.io.InputStream;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-
         byte[] myArray = {1, 2, 7, 4};
         InputStream in = new ByteArrayInputStream(myArray);
         System.out.println(sumOfStream(in));
@@ -18,6 +17,7 @@ public class Test {
         while (inputStream.available() > 0) {
             result += (byte) inputStream.read();
         }
+        inputStream.close();
         return result;
     }
 }
