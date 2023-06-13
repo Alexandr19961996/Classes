@@ -1,18 +1,20 @@
 package TestNumber25;
 
-import static TestNumber25.Label.*;
-
 public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
+    private final String[] keywords;
 
-    private String[] keywords;
-
-    SpamAnalyzer(String[] keywords) {
+    public SpamAnalyzer(String[] keywords) {
         this.keywords = keywords;
     }
 
     @Override
     public Label processText(String text) {
-        return getLabel();
+        for (String value : keywords) {
+            if (text.contains(value)) {
+                return getLabel();
+            }
+        }
+        return Label.OK;
     }
 
     @Override
@@ -22,10 +24,6 @@ public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
 
     @Override
     protected Label getLabel() {
-        if () {
-            return SPAM;
-        } else {
-            return OK;
-        }
+        return Label.SPAM;
     }
 }
