@@ -5,7 +5,7 @@ import static TestNumber25.Label.*;
 public class TooLongTextAnalyzer implements TextAnalyzer {
     private final int maxLength;
 
-    TooLongTextAnalyzer(int maxLength) {
+    public TooLongTextAnalyzer(int maxLength) {
         this.maxLength = maxLength;
     }
 
