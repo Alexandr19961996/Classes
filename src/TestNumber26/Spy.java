@@ -15,12 +15,11 @@ public class Spy implements MailService {
     @Override
     public Sendable processMail(Sendable mail) {
         MailMessage mailMessage = (MailMessage) mail;
-        if (mail.getTo().equals(AUSTIN_POWERS)) {
+        if (mail.getTo().equals(AUSTIN_POWERS) || mail.getFrom().equals(AUSTIN_POWERS)) {
             logger.log(Level.WARNING, "Detected target mail correspondence: from " +
-                    mail.getFrom() + " to " + mail.getTo() + "\"" + mailMessage.getMessage() + "\"");
+                    mail.getFrom() + " to " + mail.getTo() + " \"" + mailMessage.getMessage() + "\"");
         } else {
-            logger.log(Level.INFO, "Usual correspondence: from " +
-                    mail.getFrom() + " to " + mail.getTo() + "\"" + mailMessage.getMessage() + "\"");
+            logger.log(Level.INFO, "Usual correspondence: from " + mail.getFrom() + " to " + mail.getTo());
         }
         return mailMessage;
     }
