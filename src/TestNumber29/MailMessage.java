@@ -1,6 +1,6 @@
 package TestNumber29;
 
-public class MailMessage {
+public class MailMessage implements SendMail<String> {
     private String from;
     private String to;
     private String content;
@@ -11,14 +11,17 @@ public class MailMessage {
         this.content = content;
     }
 
+    @Override
     public String getFrom() {
         return from;
     }
 
+    @Override
     public String getTo() {
         return to;
     }
 
+    @Override
     public String getContent() {
         return content;
     }
